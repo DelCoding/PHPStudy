@@ -15,6 +15,10 @@
     }
 ?>
 
+<?php
+	echo "I come in ...."
+?>
+
 <form method="get" action="<?php echo $_SERVER["PHP_SELF"]?>">
     账号<input type="text" name="username"><br>
     密码<input type="password" name="password"><br>
