@@ -1,9 +1,6 @@
 i<?php
 
     echo "heloo git";
-    for<Plug>(neosnippet_expand)
-        {
-    for ($i=0; $i < ; $i++) {
-        
+    for ($i=0; $i < 10; $i++) {
+        echo "hello git <br>";
     }
-}
