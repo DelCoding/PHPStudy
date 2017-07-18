@@ -6,20 +6,12 @@
 
 <body>
 
-<?php
-    $name = $pass = $gender = "";
-    if($_SERVER["REQUEST_METHOD"] == "GET") {
-        $name = $_GET["username"];
-        $pass = $_GET["password"];
-        $gender = $_GET["gender"];
-    }
-?>
 
 <?php
 	echo "I come in ...."
 ?>
 
-<form method="get" action="<?php echo $_SERVER["PHP_SELF"]?>">
+<form method="get" action="2.php" target="_blank">
     账号<input type="text" name="username"><br>
     密码<input type="password" name="password"><br>
     性别：<br>
@@ -30,6 +22,7 @@
 
 </form>
 
+
 <?php
     echo "当前路径<br>";
     echo $_SERVER["PHP_SELF"];
@@ -37,12 +30,8 @@
     echo "<br>";
     echo "hello git";
     echo "<hr>";
-    echo "<h2>这是获取到的信息</h2>";
-    echo "username: ".$name;
-    echo "<br>";
-    echo "password: ".$pass;
-    echo "<br>";
-    echo "gender: ".$gender;
+    echo "<h2>已发送信息</h2>";
+
 ?>
 </body>
 </html>
