@@ -5,10 +5,25 @@
 </head>
 
 <body>
+
+<?php
+    $name = $pass = $gender = "";
+    if($_SERVER["REQUEST_METHOD"] == "GET") {
+        $name = $_GET["username"];
+        $pass = $_GET["password"];
+        $gender = $_GET["gender"];
+    }
+?>
+
 <form method="get" action="<?php echo $_SERVER["PHP_SELF"]?>">
-    账号<input type="text" name="username">
-    密码<input type="text" name="password">
-    提交<input type="submit">
+    账号<input type="text" name="username"><br>
+    密码<input type="password" name="password"><br>
+    性别：<br>
+    <input type="radio" name="gender" value="female">Female
+    <input type="radio" name="gender" value="male">Male<br>
+    <input type="submit">
+
+
 </form>
 
 <?php
@@ -17,9 +32,13 @@
     echo "<hr></hr>";
     echo "<br>";
     echo "hello git";
-    for ($i=0; $i < 10; $i++) {
-        echo "hello git <br>";
-    }
+    echo "<hr>";
+    echo "<h2>这是获取到的信息</h2>";
+    echo "username: ".$name;
+    echo "<br>";
+    echo "password: ".$pass;
+    echo "<br>";
+    echo "gender: ".$gender;
 ?>
 </body>
 </html>
