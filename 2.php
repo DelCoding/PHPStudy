@@ -4,6 +4,7 @@
 </head>
 <body>
     <h1>大佬首发</h1>
+    <h2>小弟支持</h1>
     <?php
     echo "大佬的第一份php<br>";
     echo "大佬要推到github<br>";
