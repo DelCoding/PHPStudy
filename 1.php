@@ -2,13 +2,14 @@
 <head>
     <h1>第一个PHP程序</h1>
     <h2> <a href="http://baidu.com/">jump to baidu </a> </h2>
+    <?php echo "现在是：".date("h:i:sa"); echo "<br>" ?>
 </head>
 
 <body>
 
 
 <?php
-	echo "I come in ...."
+	echo "<br>I come in ....<br>"
 ?>
 
 <form method="get" action="2.php" target="_blank">
@@ -30,8 +31,8 @@
     echo "<br>";
     echo "hello git";
     echo "<hr>";
-    echo "<h2>已发送信息</h2>";
 
+    echo "<p>Copyright @ 2008-".date("Y")." By JUNAY</p>"
 ?>
 </body>
 </html>
