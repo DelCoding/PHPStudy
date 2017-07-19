@@ -1,6 +1,6 @@
 <?php
 //    include("2.php");
-    $con = mysql_connect("localhost", "root", "");
+    $con = mysqli_connect("localhost", "root", "123456");
 /*
  *       创建数据库及my_db表
     if(!$con){
@@ -59,16 +59,18 @@
         echo "<h2>User input is vaild</h2><br>";
     }
 
-    mysql_select_db("my_db",$con);
+    mysqli_select_db($con, "my_db");
     $sqls = "insert into Persons (ID, name, age, email, sex, passwd)
     VALUES ('$_POST[ID]', '$_POST[username]','$_POST[age]', '$_POST[email]','$_POST[gender]','$_POST[password]')";
 
-    if (!mysql_query($sqls, $con)){
-        die('插入失败'.mysql_error());
+    if (!mysqli_query($con,$sqls)){
+        die('插入失败'.mysqli_error());
     }
     else{
         echo "<h3>插入记录成功</h3>";
     }
-    mysql_close($con);
+
+
+    mysqli_close($con);
 
 ?>

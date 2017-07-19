@@ -9,7 +9,7 @@
 <head>
     <title>主界面</title>
     <h1>第一个PHP程序</h1>
-    <h2> <a href="http://baidu.com/">jump to baidu </a> </h2>
+    <h2> <a href="http://www.google.com/">Google</a> </h2>
     <?php echo "现在是：".date("h:i:sa"); echo "<br>" ?>
 </head>
 
@@ -26,11 +26,12 @@
     echo "<h3>你的会话号是：".$_SESSION['views']."</h3><br>";
 
     echo "尝试连接数据库<br>";
-    $con = mysql_connect("localhost", "root", "");
+    $con = mysqli_connect("localhost", "root", "123456");
     if(!$con){
-        die('Could not connect:'.mysql_error());
+        die('Could not connect:'.mysqli_error());
     }
     else {
+        echo "使用新函数连接";
         echo "<h3>连接数据库成功</h3>";
     }
 ?>
