@@ -1,6 +1,14 @@
 <?php
-    //文件上传处理脚本
+//文件上传处理脚本
+//
+//解决文件没有权限移动
+//  1. 查看Apache进程的所有者，新建php文件，<?php echo exec('whoami')；
+//  2. 得到用户名后使用： chown 用户名 上传的文件夹路径
+//  3. chmod 755 上传的文件夹
+//
+//
 //    $error = $name = $type = $size = $tmp_name = "";
+//    解决未定义的索引提示
     function _get($str)
     {
         $val = !empty($_FILES["file"][$str])?$_FILES["file"]["$str"]:null;
