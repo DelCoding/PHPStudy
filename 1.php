@@ -37,10 +37,10 @@
 <!-- a simple of form with get -->
 <form method="post" action="2.php" target="_blank">
     <h2>登陆表单</h2>
-    账号<input type="text" name="username"><br>
-    密码<input type="password" name="password"><br>
-    年龄<input type="text" name="age"><br>
-    邮箱<input type="text" name="email"><br>
+    账号：<input type="text" name="username"><br>
+    密码：<input type="password" name="password"><br>
+    年龄：<input type="text" name="age"><br>
+    邮箱：<input type="text" name="email"><br>
     性别：<br>
     <input type="radio" name="gender" value="female">Female
     <input type="radio" name="gender" value="male">Male<br>

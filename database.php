@@ -37,6 +37,38 @@
     echo "<h3>新增列成功";
     echo "正在退出</h3>";
  */
+//创建过滤器
+    $filters = array
+    (
+        "name" => array("filter" => FILTER_SANITIZE_STRING),
+        "age" => array("filter" => FILTER_VALIDATE_INT, "options" => array("min_range"=>1, "max_range"=>120)),
+        "email" => FILTER_VALIDATE_EMAIL,
+    );
+
+    $result = filter_input_array(INPUT_POST, $filters);
+
+    if(!$result["age"]){
+        echo "<h3>Age must be a number between 1 and 120</h3><br />";
+        die();
+    }
+    elseif (!$result["email"]) {
+        echo "<h3>E-Mail is invaild.</h3><br />";
+        die();
+    }
+    else{
+        echo "<h2>User input is vaild</h2><br>";
+    }
+
+    mysql_select_db("my_db",$con);
+    $sqls = "insert into Persons (ID, name, passwd, email, sex)
+    VALUES ('$_POST[ID]', '$_POST[name]', '$_POST[passwd]', '$_POST[email]','$_POST[gender]')";
+
+    if (!mysql_query($sqls, $con)){
+        die('插入失败'.mysql_error());
+    }
+    else{
+        echo "<h3>插入记录成功</h3>";
+    }
     mysql_close($con);
 
 ?>
