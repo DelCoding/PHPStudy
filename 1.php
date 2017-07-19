@@ -9,9 +9,9 @@
 
 
 <?php
-	echo "<br>I come in ....<br>"
+    echo "<br>I come in ....<br>";
 ?>
-
+<!-- a simple of form with get -->
 <form method="get" action="2.php" target="_blank">
     账号<input type="text" name="username"><br>
     密码<input type="password" name="password"><br>
@@ -23,6 +23,13 @@
 
 </form>
 
+<!-- upload file to server -->
+<form target="_blank "action="upload_file.php" method="post" enctype="multipart/form-data">
+    <label for="file">Filename:</label>
+    <input type="file" name="file" id="file" />
+    <br />
+    <input type="submit" name="submit" value="Submit" />
+</form>
 
 <?php
     echo "当前路径<br>";
