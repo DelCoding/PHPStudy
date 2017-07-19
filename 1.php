@@ -35,9 +35,10 @@
     }
 ?>
 <!-- a simple of form with get -->
-<form method="post" action="2.php" target="_blank">
+<form method="post" action="database.php" target="_blank">
     <h2>登陆表单</h2>
-    账号：<input type="text" name="username"><br>
+    ID: <input type="int" name="ID"><br>
+    用户名：<input type="text" name="username"><br>
     密码：<input type="password" name="password"><br>
     年龄：<input type="text" name="age"><br>
     邮箱：<input type="text" name="email"><br>

@@ -60,8 +60,8 @@
     }
 
     mysql_select_db("my_db",$con);
-    $sqls = "insert into Persons (ID, name, passwd, email, sex)
-    VALUES ('$_POST[ID]', '$_POST[name]', '$_POST[passwd]', '$_POST[email]','$_POST[gender]')";
+    $sqls = "insert into Persons (ID, name, age, email, sex, passwd)
+    VALUES ('$_POST[ID]', '$_POST[username]','$_POST[age]', '$_POST[email]','$_POST[gender]','$_POST[password]')";
 
     if (!mysql_query($sqls, $con)){
         die('插入失败'.mysql_error());
