@@ -18,6 +18,28 @@ echo "<p><b>大佬的第一份php</b></p>";
 ?>
 
 <?php
+    //创建过滤器
+    $filters = array
+    (
+    "name" => array("filter" => FILTER_SANITIZE_STRING),
+    "age" => array("filter" => FILTER_VALIDATE_INT, "options" => array("min_range"=>1, "max_range"=>120)),
+    "email" => FILTER_VALIDATE_EMAIL,
+    );
+
+    $result = filter_input_array(INPUT_GET, $filters);
+
+    if(!$result["age"]){
+        echo "<h3>Age must be a number between 1 and 120</h3><br />";
+        die();
+    }
+    elseif (!$result["email"]) {
+        echo "<h3>E-Mail is invaild.</h3><br />";
+        die();
+    }
+    else{
+        echo "<h2>User input is vaild</h2><br>";
+    }
+
     if (isset($_COOKIE["user"]))
         echo "<u><b>Welcome ".$_COOKIE["user"]."</b>!</u><br />";
     else {
@@ -30,10 +52,14 @@ echo "<p><b>大佬的第一份php</b></p>";
         $name= $_GET["username"];
         $passwd = $_GET["password"];
         $gender = $_GET["gender"];
+        $age = $_GET["age"];
+        $email = $_GET["email"];
 
         echo "<br>username: ".$name;
-        echo "<br>username: ".$passwd;
+        echo "<br>password: ".$passwd;
         echo "<br>gender: ".$gender;
+        echo "<br>age: ".$age;
+        echo "<br>email: ".$email;
     } else {
         echo "<br>请输入用户名密码";
     }
