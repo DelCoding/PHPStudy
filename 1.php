@@ -23,10 +23,19 @@
         $_SESSION['views'] = 1;
     }
     echo "<br><h2>Welcome!</h2><br>";
-    echo "<h3>你的会话号是：".$_SESSION['views']."</h3><br>"
+    echo "<h3>你的会话号是：".$_SESSION['views']."</h3><br>";
+
+    echo "尝试连接数据库<br>";
+    $con = mysql_connect("localhost", "root", "");
+    if(!$con){
+        die('Could not connect:'.mysql_error());
+    }
+    else {
+        echo "<h3>连接数据库成功</h3>";
+    }
 ?>
 <!-- a simple of form with get -->
-<form method="get" action="2.php" target="_blank">
+<form method="post" action="2.php" target="_blank">
     <h2>登陆表单</h2>
     账号<input type="text" name="username"><br>
     密码<input type="password" name="password"><br>
