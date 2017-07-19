@@ -13,9 +13,8 @@ if ($con->connect_errno){
 }
 echo "<h3>连接数据库成功</h3>";
 
-$results = $con->query("select ID, name, age, email, sex, passwd from Persons");
-
-echo "<table border='1'>
+function printTable($t){
+    echo "<table border='1'>
 <tr>
 <th>ID</th>
 <th>Name</th>
@@ -25,17 +24,20 @@ echo "<table border='1'>
 <th>Password</th>
 ";
 
-while ($row = $results->fetch_assoc()){
-    echo "<tr>";
-    echo "<td>".$row["ID"]."</td>";
-    echo "<td>".$row["name"]."</td>";
-    echo "<td>".$row['age']."</td>";
-    echo "<td>".$row['email']."</td>";
-    echo "<td>".$row['sex']."</td>";
-    echo "<td>".$row['passwd']."</td>";
-    echo "</tr>";
-}
+    while ($row = $t->fetch_assoc()){
+        echo "<tr>";
+        echo "<td>".$row["ID"]."</td>";
+        echo "<td>".$row["name"]."</td>";
+        echo "<td>".$row['age']."</td>";
+        echo "<td>".$row['email']."</td>";
+        echo "<td>".$row['sex']."</td>";
+        echo "<td>".$row['passwd']."</td>";
+        echo "</tr>";
+    }
 
-echo "</table>";
+    echo "</table>";
+}
+$results = $con->query("select ID, name, age, email, sex, passwd from Persons ORDER BY age ASC ");
+printTable($results);
 
 $con->close();
