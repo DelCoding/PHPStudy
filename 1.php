@@ -27,6 +27,7 @@
 ?>
 <!-- a simple of form with get -->
 <form method="get" action="2.php" target="_blank">
+    <h2>登陆表单</h2>
     账号<input type="text" name="username"><br>
     密码<input type="password" name="password"><br>
     性别：<br>
@@ -39,10 +40,22 @@
 
 <!-- upload file to server -->
 <form target="_blank "action="upload_file.php" method="post" enctype="multipart/form-data">
+    <h2><br>文件上传<br></h2>
     <label for="file">Filename:</label>
     <input type="file" name="file" id="file" />
     <br />
     <input type="submit" name="submit" value="Submit" />
+</form>
+
+<!-- a simple of send email -->
+<form method="post" action="email.php" target="_blank">
+    <h2><br>发送邮件<br></h2>
+    Email:<input name="email" type="text" /><br />
+    Subject: <input name="subject" type="text" /><br />
+    Message:<br />
+    <textarea name="message" row="100" cols="50">
+    </textarea><br />
+    <input type="submit" />
 </form>
 
 <?php
