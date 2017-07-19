@@ -15,22 +15,28 @@
         return $val;
     }
 
+    if ((_get("type") == "image/gif") || (_get("type") == "image/jpeg") || (_get("type")) == "image/pjpeg") {
 
-    if (_get("error") > 0) {
-        echo "Return Code: ".$_FILES["file"]["error"]."<br />";
+        if (_get("error") > -1) {
+            echo "Return Code: ".$_FILES["file"]["error"]."<br />";
+         }
+        else {
+            echo "Upload: "._get("name")."<br />";
+            echo "Type: "._get("type")."<br />";
+            echo "Size: "._get("size")."<br />";
+            echo "Tmp_File: "._get("tmp_name")."<br />";
+
+            if (file_exists("upload/"._get("name"))) {
+                echo _get("tmp_name")."already exists.";
+            }
+            else {
+                move_uploaded_file(_get("tmp_name"), "upload/"._get("name"));
+                echo "Had stored in:  upload/".$_FILES["file"]["name"];
+            }
+        }
     }
     else {
-        echo "Upload: "._get("name")."<br />";
-        echo "Type: "._get("type")."<br />";
-        echo "Size: "._get("size")."<br />";
-        echo "Tmp_File: "._get("tmp_name")."<br />";
-
-        if (file_exists("upload/"._get("name"))) {
-                echo _get("tmp_name")."already exists.";
-        }
-        else {
-            move_uploaded_file(_get("tmp_name"), "upload/"._get("name"));
-            echo "Had stored in:  upload/".$_FILES["file"]["name"];
-        }
+        echo "<h2>不是允许上传的文件类型</h2>";
+        echo "<h3><b>请上传gif, jpg文件类型</b></h3>";
     }
 ?>

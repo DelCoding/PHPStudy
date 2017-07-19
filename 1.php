@@ -1,5 +1,13 @@
+<?php
+    //COOKIE设置和时区
+    setcookie("user","Junay",time()+3600);
+    date_default_timezone_set("Asia/Shanghai");
+    session_start();
+?>
+
 <html>
 <head>
+    <title>主界面</title>
     <h1>第一个PHP程序</h1>
     <h2> <a href="http://baidu.com/">jump to baidu </a> </h2>
     <?php echo "现在是：".date("h:i:sa"); echo "<br>" ?>
@@ -9,7 +17,13 @@
 
 
 <?php
-    echo "<br>I come in ....<br>";
+    if(isset($_SESSION['views']))
+        $_SESSION['views'] = $_SESSION['views'] + 1;
+    else {
+        $_SESSION['views'] = 1;
+    }
+    echo "<br><h2>Welcome!</h2><br>";
+    echo "<h3>你的会话号是：".$_SESSION['views']."</h3><br>"
 ?>
 <!-- a simple of form with get -->
 <form method="get" action="2.php" target="_blank">
