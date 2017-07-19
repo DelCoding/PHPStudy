@@ -32,7 +32,7 @@
 </form>
 
 <?php
-    echo "当前路径<br>";
+    echo "<br>当前路径<br>";
     echo $_SERVER["PHP_SELF"];
     echo "<hr></hr>";
     echo "<br>";
