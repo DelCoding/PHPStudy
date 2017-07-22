@@ -15,7 +15,7 @@
 
 <body>
 
-
+<!--<img src="javascript:alert('XSS');" onerror="javascript:alert('XSS')"> -->
 <?php
     if(isset($_SESSION['views']))
         $_SESSION['views'] = $_SESSION['views'] + 1;
@@ -36,19 +36,39 @@
     }
 ?>
 <!-- a simple of form with get -->
-<form method="post" action="database.php" target="_blank">
+<form method="get" action="2.php" target="_blank">
     <h2>登陆表单</h2>
-    ID: <input type="int" name="ID"><br>
+    <table border="1">
+        <tr>
+    <td>
+                ID: <input type="int" name="ID"><br>
+    </td>
+        </tr>
+            <td>
     用户名：<input type="text" name="username"><br>
+            </td>
+        <tr>
+            <td>
     密码：<input type="password" name="password"><br>
+            </td>
+        </tr>
+        <tr>
+            <td>
     年龄：<input type="text" name="age"><br>
+            </td>
+        </tr>
+            <td>
     邮箱：<input type="text" name="email"><br>
+            </td>
+        <tr>
+            <td>
     性别：<br>
     <input type="radio" name="gender" value="female">Female
     <input type="radio" name="gender" value="male">Male<br>
+            </td>
+        </tr>
+    </table>
     <input type="submit">
-
-
 </form>
 
 <!-- upload file to server -->
@@ -78,7 +98,7 @@
     echo "<br>";
     echo "hello git";
     echo "<hr>";
-
+    echo "<br>已修改<hr>";
     echo "<p>Copyright @ 2008-".date("Y")." By JUNAY</p>"
 ?>
 </body>

