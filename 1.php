@@ -10,7 +10,8 @@
     <title>主界面</title>
     <h1>第一个PHP程序</h1>
     <h2> <a href="http://www.google.com/">Google</a> </h2>
-    <?php echo "现在是：".date("h:i:sa"); echo "<br>" ?>
+    <script>document.write(Date());</script>
+    <?php echo "<br>现在是：".date("h:i:sa"); echo "<br>" ?>
 </head>
 
 <body>
