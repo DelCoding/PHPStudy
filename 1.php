@@ -3,17 +3,26 @@
     setcookie("user","Junay",time()+3600);
     date_default_timezone_set("Asia/Shanghai");
     session_start();
+    echo "<script>alert('hello')</script>";
 ?>
 
 <html>
 <head>
     <title>主界面</title>
-    <h1>第一个PHP程序</h1>
-    <h2> <a href="http://www.google.com/">Google</a> </h2>
+    <h1 style="background-color: deepskyblue">第一个PHP程序</h1>
+    <h2> <a onmouseover="changeOver(this)" onmouseout="changeOut(this)" href="http://www.google.com/">Google</a> </h2>
     <script>document.write(Date());</script>
     <?php echo "<br>现在是：".date("h:i:sa"); echo "<br>" ?>
 </head>
+<script>
+    function changeOver(obj){
+        obj.style="background-color: deepskyblue";
+    }
+    function changeOut(obj){
+        obj.style="background-color: white";
+    }
 
+</script>
 <body>
 
 <!--<img src="javascript:alert('XSS');" onerror="javascript:alert('XSS')"> -->
@@ -97,7 +106,7 @@
     echo $_SERVER["PHP_SELF"];
     echo "<hr></hr>";
     echo "<br>";
-    echo "hello git";
+    echo "hello github";
     echo "<hr>";
     echo "<br>已修改<hr>";
     echo "<p>Copyright @ 2008-".date("Y")." By JUNAY</p>"

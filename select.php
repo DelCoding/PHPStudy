@@ -74,7 +74,7 @@ echo "<h3>请提交需要查询的表单<br></h3>";
             echo "请输入正确的id<br>";
             return false;
         }
-
+        
 //        if (preg_match("/\s/", $my_name)){
 //            echo "匹配到空白字符<br>";
 //            echo "请输入正确的name<br>";
